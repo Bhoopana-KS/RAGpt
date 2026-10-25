@@ -226,9 +226,16 @@ export default function App() {
     <div className={`app-shell ${sidebarOpen ? "" : "sidebar-collapsed"}`}>
       {sidebarOpen && <aside className="sidebar">
         <div className="sidebar-top">
-          <a className="brand" href="#" onClick={(e) => e.preventDefault()}>
-            <img src="/logo.png" alt="RAGpt — Retrieval-Augmented Generation Assistant" />
-          </a>
+          
+<a
+  className="brand brand-text"
+  href="#"
+  onClick={(e) => e.preventDefault()}
+  aria-label="RAGpt"
+>
+  <span>RAG</span><span className="brand-accent">pt</span>
+</a>
+
           <button className="icon-button sidebar-toggle" onClick={() => setSidebarOpen(false)} aria-label="Collapse sidebar"><PanelLeftClose size={18}/></button>
         </div>
         <button className="new-chat" onClick={newChat}><Plus size={18}/> <span>New chat</span></button>
@@ -267,16 +274,32 @@ export default function App() {
       </aside>}
 
       <main className="main-area">
-        <header className="topbar">
-          {!sidebarOpen && <button className="icon-button" onClick={() => setSidebarOpen(true)} aria-label="Open sidebar"><PanelLeftOpen size={19}/></button>}
-          <div className="topbar-title">RAGpt <span>AI ASSISTANT</span></div>
-          <div className="topbar-right"><span className={`status-pill ${apiOnline ? "online" : "offline"}`}><i/>{apiOnline ? "Ready" : "Offline"}</span><button className="new-chat compact" onClick={newChat}><Plus size={16}/> New chat</button></div>
-        </header>
+        
+
+<header className="topbar">
+  {!sidebarOpen && (
+    <button
+      className="icon-button"
+      onClick={() => setSidebarOpen(true)}
+      aria-label="Open sidebar"
+    >
+      <PanelLeftOpen size={19} />
+    </button>
+  )}
+
+  <div className="topbar-right">
+    <span className={`status-pill ${apiOnline ? "online" : "offline"}`}>
+      <i />
+      {apiOnline ? "Ready" : "Offline"}
+    </span>
+  </div>
+</header>
+
 
         <section className={`conversation ${messages.length === 0 ? "welcome-conversation" : ""}`}>
           {messages.length === 0 ? (
             <div className="welcome">
-              <div className="welcome-mark"><Sparkles size={22}/></div>
+              <div className="welcome-logo"><img src="/logo.png" alt="RAGpt Logo" /></div>
               <p className="eyebrow">YOUR DOCUMENTS, UNDERSTOOD</p>
               <h1>What can I help you<br className="desktop-break"/> discover today?</h1>
               <p className="welcome-subtitle">Ask questions, explore ideas, and find answers in your documents.</p>

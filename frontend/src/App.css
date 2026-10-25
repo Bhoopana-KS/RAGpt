@@ -152,3 +152,93 @@ button:focus-visible, textarea:focus-visible { outline: 3px solid rgba(185,143,9
   .composer-wrap { width:calc(100% - 22px); padding-bottom:10px; }
   .desktop-break { display:none; }
 }
+.welcome-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.welcome-logo img {
+  display: block;
+  width: 220px;
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Consistent RAGpt logo styling */
+
+.brand img {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  max-height: 100px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.topbar-brand img {
+  display: block;
+  width: 115px;
+  max-width: 35vw;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.welcome-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.welcome-logo img {
+  display: block;
+  width: 220px;
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 650px) {
+  .topbar-brand img {
+    width: 95px;
+  }
+
+  .welcome-logo img {
+    width: 180px;
+  }
+}
+
+/* RAGpt text branding in the sidebar */
+.brand-text {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 1;
+  color: #49321F;
+}
+
+.brand-text .brand-accent {
+  color: #B98F5B;
+}
+
+/* Remove the old sidebar logo image styling */
+.brand-text img {
+  display: none;
+}
